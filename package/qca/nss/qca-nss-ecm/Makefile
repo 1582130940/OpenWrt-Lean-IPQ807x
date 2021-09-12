@@ -69,12 +69,6 @@ define KernelPackage/qca-nss-ecm/Default/install
 	$(INSTALL_DATA) ./files/qca-nss-ecm.uci $(1)/etc/config/ecm
 	$(INSTALL_DATA) ./files/qca-nss-ecm.defaults $(1)/etc/uci-defaults/99-qca-nss-ecm
 	$(INSTALL_BIN) ./files/qca-nss-ecm.sysctl $(1)/etc/sysctl.d/qca-nss-ecm.conf
-ifeq ($(CONFIG_KERNEL_IPQ_MEM_PROFILE),256)
-	echo 'net.netfilter.nf_conntrack_max=2048' >> $(1)/etc/sysctl.d/qca-nss-ecm.conf
-endif
-ifeq ($(CONFIG_KERNEL_IPQ_MEM_PROFILE),512)
-	echo 'net.netfilter.nf_conntrack_max=8192' >> $(1)/etc/sysctl.d/qca-nss-ecm.conf
-endif
 endef
 
 define KernelPackage/qca-nss-ecm-standard
