@@ -31,7 +31,7 @@ define Package/perf
 	    +PACKAGE_libbfd:libbfd +PACKAGE_libopcodes:libopcodes
   TITLE:=Linux performance monitoring tool
   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASE)
-  URL:=http://www.kernel.org
+  URL:=http://cdn.kernel.org
 endef
 
 define Package/perf/description
