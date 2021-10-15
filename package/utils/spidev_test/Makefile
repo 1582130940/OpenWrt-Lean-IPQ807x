@@ -22,7 +22,7 @@ define Package/spidev-test
   DEPENDS:=+kmod-spi-dev @!IN_SDK
   TITLE:=SPI testing utility
   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASE)
-  URL:=http://www.kernel.org
+  URL:=http://cdn.kernel.org
 endef
 
 define Package/spidev-test/description

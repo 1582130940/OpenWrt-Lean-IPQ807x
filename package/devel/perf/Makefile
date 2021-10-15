@@ -30,7 +30,7 @@ define Package/perf
   DEPENDS:= +libelf +libdw +PACKAGE_libunwind:libunwind +libpthread +librt +objdump @!IN_SDK @!TARGET_arc770 @KERNEL_PERF_EVENTS
   TITLE:=Linux performance monitoring tool
   VERSION:=$(LINUX_VERSION)-$(PKG_RELEASE)
-  URL:=http://www.kernel.org
+  URL:=http://cdn.kernel.org
 endef
 
 define Package/perf/description
