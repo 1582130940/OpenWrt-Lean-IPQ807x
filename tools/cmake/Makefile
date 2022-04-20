@@ -13,7 +13,7 @@ PKG_CPE_ID:=cpe:/a:kitware:cmake
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/Kitware/CMake/releases/download/v$(PKG_VERSION)/ \
-		https://cmake.org/files/v3.19/
+		https://cmake.org/files/v3.22/
 PKG_HASH:=3c1c478b9650b107d452c5bd545c72e2fad4e37c09b89a1984b9a2f46df6aced
 
 HOST_BUILD_PARALLEL:=1
