@@ -94,7 +94,7 @@ diff --git a/nss_hal/nss_hal.c b/nss_hal/nss_hal.c
 index 7e9a044..c0051e4 100644
 --- a/nss_hal/nss_hal.c
 +++ b/nss_hal/nss_hal.c
-@@ -460,10 +460,12 @@ int nss_hal_probe(struct platform_device *nss_dev)
+@@ -461,10 +461,12 @@ int nss_hal_probe(struct platform_device *nss_dev)
  	}
  #endif
  
@@ -107,7 +107,7 @@ index 7e9a044..c0051e4 100644
  
  #ifdef NSS_DRV_PPE_ENABLE
  	if (npd->ppe_enabled == NSS_FEATURE_ENABLED) {
-@@ -558,6 +560,7 @@ int nss_hal_probe(struct platform_device *nss_dev)
+@@ -559,6 +561,7 @@ int nss_hal_probe(struct platform_device *nss_dev)
  	}
  #endif
  
@@ -115,7 +115,7 @@ index 7e9a044..c0051e4 100644
  	if (npd->wifioffload_enabled == NSS_FEATURE_ENABLED) {
  		nss_top->wifi_handler_id = nss_dev->id;
  		nss_top->dynamic_interface_table[NSS_DYNAMIC_INTERFACE_TYPE_VAP] = nss_dev->id;
-@@ -585,6 +588,7 @@ int nss_hal_probe(struct platform_device *nss_dev)
+@@ -586,6 +589,7 @@ int nss_hal_probe(struct platform_device *nss_dev)
  		 */
  		nss_wifili_thread_scheme_db_init(nss_dev->id);
  	}
@@ -123,7 +123,7 @@ index 7e9a044..c0051e4 100644
  
  #ifdef NSS_DRV_OAM_ENABLE
  	if (npd->oam_enabled == NSS_FEATURE_ENABLED) {
-@@ -601,11 +605,13 @@ int nss_hal_probe(struct platform_device *nss_dev)
+@@ -602,11 +606,13 @@ int nss_hal_probe(struct platform_device *nss_dev)
  	}
  #endif
  

@@ -138,7 +138,7 @@ diff --git a/nss_hal/nss_hal.c b/nss_hal/nss_hal.c
 index d58bb57..57974c1 100644
 --- a/nss_hal/nss_hal.c
 +++ b/nss_hal/nss_hal.c
-@@ -78,9 +78,9 @@ int nss_hal_firmware_load(struct nss_ctx_instance *nss_ctx, struct platform_devi
+@@ -73,9 +73,9 @@ int nss_hal_firmware_load(struct nss_ctx_instance *nss_ctx, struct platform_devi
  		return rc;
  	}
  
@@ -154,7 +154,7 @@ diff --git a/nss_meminfo.c b/nss_meminfo.c
 index e24e6be..2255eae 100644
 --- a/nss_meminfo.c
 +++ b/nss_meminfo.c
-@@ -728,7 +728,7 @@ bool nss_meminfo_init(struct nss_ctx_instance *nss_ctx)
+@@ -735,7 +735,7 @@ bool nss_meminfo_init(struct nss_ctx_instance *nss_ctx)
  	/*
  	 * meminfo_start is the label where the start address of meminfo map is stored.
  	 */

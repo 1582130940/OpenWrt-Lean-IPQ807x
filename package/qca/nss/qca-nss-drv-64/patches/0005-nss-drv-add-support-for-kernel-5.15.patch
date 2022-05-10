@@ -28,7 +28,7 @@ index f9e6014..8cd1d4b 100644
  #error "Check skb recycle code in this file to match Linux version"
  #endif
  
-@@ -2623,7 +2624,7 @@ static inline bool nss_core_skb_can_reuse(struct nss_ctx_instance *nss_ctx,
+@@ -2678,7 +2679,7 @@ static inline bool nss_core_skb_can_reuse(struct nss_ctx_instance *nss_ctx,
  	if (unlikely(irqs_disabled()))
  		return false;
  
@@ -41,7 +41,7 @@ diff --git a/nss_coredump.c b/nss_coredump.c
 index ecad659..3ecef7e 100644
 --- a/nss_coredump.c
 +++ b/nss_coredump.c
-@@ -23,7 +23,11 @@
+@@ -25,7 +25,11 @@
  #include "nss_hal.h"
  #include "nss_log.h"
  #include <linux/kernel.h>
