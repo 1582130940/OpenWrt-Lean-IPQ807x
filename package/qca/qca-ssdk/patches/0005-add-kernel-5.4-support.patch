@@ -1,6 +1,6 @@
 --- a/app/nathelper/linux/lib/nat_helper_dt.c
 +++ b/app/nathelper/linux/lib/nat_helper_dt.c
-@@ -721,7 +721,7 @@ napt_ct_counter_sync(a_uint32_t hw_index)
+@@ -726,7 +726,7 @@ napt_ct_counter_sync(a_uint32_t hw_index)
  	}
  	
  	if (!test_bit(IPS_FIXED_TIMEOUT_BIT, &ct->status)) {
@@ -9,7 +9,7 @@
  	}
  
  	if((cct != NULL) && (napt_hw_get_by_index(&napt, hw_index) == 0))
-@@ -770,7 +770,7 @@ napt_ct_timer_update(a_uint32_t hw_index)
+@@ -775,7 +775,7 @@ napt_ct_timer_update(a_uint32_t hw_index)
  	}
  
  	if (!test_bit(IPS_FIXED_TIMEOUT_BIT, &ct->status)) {
@@ -96,7 +96,7 @@
  static void
 --- a/make/linux_opt.mk
 +++ b/make/linux_opt.mk
-@@ -449,9 +449,6 @@ ifeq (KSLIB, $(MODULE_TYPE))
+@@ -483,9 +483,6 @@ ifeq (KSLIB, $(MODULE_TYPE))
  	    else ifeq ($(ARCH), arm)
  	    MODULE_INC += -I$(SYS_PATH) \
                -I$(TOOL_PATH)/../lib/gcc/$(TARGET_NAME)/$(GCC_VERSION)/include/ \
