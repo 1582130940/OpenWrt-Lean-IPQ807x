@@ -27,7 +27,7 @@ index 8b21438028169..fc3524e83e52c 100644
  
  static struct mhi_channel_config ath11k_mhi_channels_qca6390[] = {
  	{
-@@ -382,6 +383,7 @@ int ath11k_mhi_register(struct ath11k_pci *ab_pci)
+@@ -384,6 +385,7 @@ int ath11k_mhi_register(struct ath11k_pci *ab_pci)
  		mhi_ctrl->iova_stop = 0xFFFFFFFF;
  	}
  

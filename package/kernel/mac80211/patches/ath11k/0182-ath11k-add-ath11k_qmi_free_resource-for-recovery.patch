@@ -20,7 +20,7 @@ diff --git a/drivers/net/wireless/ath/ath11k/qmi.c b/drivers/net/wireless/ath/at
 index d0701e8eca9c0..1144e828cf5cc 100644
 --- a/drivers/net/wireless/ath/ath11k/qmi.c
 +++ b/drivers/net/wireless/ath/ath11k/qmi.c
-@@ -3025,3 +3025,8 @@ void ath11k_qmi_deinit_service(struct ath11k_base *ab)
+@@ -3030,3 +3030,8 @@ void ath11k_qmi_deinit_service(struct ath11k_base *ab)
  }
  EXPORT_SYMBOL(ath11k_qmi_deinit_service);
  
