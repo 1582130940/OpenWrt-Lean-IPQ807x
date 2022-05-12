@@ -21,6 +21,7 @@ define KernelPackage/qca-nss-ecm-64
   DEPENDS:=@(TARGET_ipq807x||TARGET_ipq60xx) \
   	+kmod-qca-nss-drv-64 \
 	+iptables-mod-extra \
+	+kmod-bonding \
 	+kmod-ipt-conntrack \
 	+kmod-ipt-physdev \
 	+iptables-mod-physdev \
@@ -31,7 +32,7 @@ define KernelPackage/qca-nss-ecm-64
   KCONFIG:=CONFIG_BRIDGE_NETFILTER=y \
 	CONFIG_NF_CONNTRACK_EVENTS=y \
 	CONFIG_NF_CONNTRACK_CHAIN_EVENTS=y \
-	CONFIG_NF_CONNTRACK_DSCPREMARK_EXT=n
+	CONFIG_NF_CONNTRACK_DSCPREMARK_EXT=y
 endef
 
 define KernelPackage/qca-nss-ecm-64/Description
@@ -54,14 +55,14 @@ EXTRA_CFLAGS+=-I$(STAGING_DIR)/usr/include/qca-nss-drv
 ifneq (, $(findstring $(CONFIG_TARGET_BOARD), "ipq807x" "ipq60xx"))
 ECM_MAKE_OPTS+= ECM_FRONT_END_NSS_ENABLE=y \
 		ECM_CLASSIFIER_HYFI_ENABLE=n \
-		ECM_MULTICAST_ENABLE=n \
+		ECM_MULTICAST_ENABLE=y \
 		ECM_INTERFACE_IPSEC_ENABLE=n \
 		ECM_INTERFACE_PPTP_ENABLE=n \
 		ECM_INTERFACE_L2TPV2_ENABLE=n \
-		ECM_INTERFACE_GRE_TAP_ENABLE=n \
-		ECM_INTERFACE_GRE_TUN_ENABLE=n \
+		ECM_INTERFACE_GRE_TAP_ENABLE=y \
+		ECM_INTERFACE_GRE_TUN_ENABLE=y \
 		ECM_INTERFACE_SIT_ENABLE=n \
-		ECM_INTERFACE_TUNIPIP6_ENABLE=n \
+		ECM_INTERFACE_TUNIPIP6_ENABLE=y \
 		ECM_INTERFACE_RAWIP_ENABLE=n \
 		ECM_INTERFACE_VLAN_ENABLE=n \
 		ECM_CLASSIFIER_MARK_ENABLE=n \
