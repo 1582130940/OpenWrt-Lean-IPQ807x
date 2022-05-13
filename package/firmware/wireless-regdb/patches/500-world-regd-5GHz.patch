@@ -5,12 +5,25 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
 ---
 --- a/db.txt
 +++ b/db.txt
-@@ -16,7 +16,7 @@ country 00:
+@@ -15,17 +15,17 @@ country 00:
+ 	(755 - 928 @ 2), (20), NO-IR
+ 	(2402 - 2472 @ 40), (20)
+ 	# Channel 12 - 13.
+-	(2457 - 2482 @ 20), (20), NO-IR, AUTO-BW
++	(2457 - 2482 @ 20), (20), AUTO-BW
  	# Channel 14. Only JP enables this and for 802.11b only
  	(2474 - 2494 @ 20), (20), NO-IR, NO-OFDM
  	# Channel 36 - 48
 -	(5170 - 5250 @ 80), (20), NO-IR, AUTO-BW
 +	(5170 - 5250 @ 80), (20), AUTO-BW
  	# Channel 52 - 64
- 	(5250 - 5330 @ 80), (20), NO-IR, DFS, AUTO-BW
+-	(5250 - 5330 @ 80), (20), NO-IR, DFS, AUTO-BW
++	(5250 - 5330 @ 80), (20), AUTO-BW
  	# Channel 100 - 144
+-	(5490 - 5730 @ 160), (20), NO-IR, DFS
++	(5490 - 5730 @ 160), (20)
+ 	# Channel 149 - 165
+-	(5735 - 5835 @ 80), (20), NO-IR
++	(5735 - 5835 @ 80), (20)
+ 	# IEEE 802.11ad (60GHz), channels 1..3
+ 	(57240 - 63720 @ 2160), (0)
