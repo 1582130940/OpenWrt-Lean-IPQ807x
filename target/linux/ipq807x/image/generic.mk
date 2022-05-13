@@ -28,7 +28,7 @@ define Device/qnap_301w
 	IMAGES += factory.bin sysupgrade.bin
 	IMAGE/factory.bin := append-rootfs | pad-rootfs | pad-to 64k
 	IMAGE/sysupgrade.bin/squashfs := append-rootfs | pad-to 64k | sysupgrade-tar rootfs=$$$$@ | append-metadata
-	DEVICE_PACKAGES := ipq-wifi-qnap_301w e2fsprogs kmod-fs-ext4 losetup
+	DEVICE_PACKAGES := ipq-wifi-qnap_301w e2fsprogs kmod-fs-ext4 losetup kmod-usb3 kmod-usb-dwc3 kmod-usb-dwc3-qcom
 endef
 TARGET_DEVICES += qnap_301w
 
@@ -63,7 +63,7 @@ define Device/zte_mf269
 	PAGESIZE := 2048
 	DEVICE_DTS_CONFIG := config@ac04
 	SOC := ipq8071
-	DEVICE_PACKAGES := ipq-wifi-zte_mf269 uboot-envtools
+	DEVICE_PACKAGES := ipq-wifi-zte_mf269 uboot-envtools kmod-usb3 kmod-usb-dwc3 kmod-usb-dwc3-qcom
 endef
 TARGET_DEVICES += zte_mf269
 
@@ -76,6 +76,6 @@ define Device/tplink_xtr10890
 	PAGESIZE := 2048
 	DEVICE_DTS_CONFIG := config@hk01.c6
 	SOC := ipq8078
-	DEVICE_PACKAGES := ipq-wifi-tplink_xtr10890 uboot-envtools
+	DEVICE_PACKAGES := ipq-wifi-tplink_xtr10890 uboot-envtools kmod-usb3 kmod-usb-dwc3 kmod-usb-dwc3-qcom
 endef
 TARGET_DEVICES += tplink_xtr10890
