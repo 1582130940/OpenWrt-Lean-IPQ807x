@@ -51,7 +51,7 @@ DEFAULT_PACKAGES.router:=\
 	odhcpd-ipv6only \
 	ppp \
 	ppp-mod-pppoe \
-	luci-newapi block-mount coremark kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw \
+	luci-newapi block-mount coremark kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw kmod-tun \
 	kmod-tun kmod-inet-diag iptables-mod-tproxy iptables-mod-extra ipset ip-full libcap libcap-bin \
 	default-settings luci luci-app-ddns luci-app-upnp luci-app-autoreboot ruby ruby-yaml \
 	luci-app-filetransfer luci-app-vsftpd luci-app-ssr-plus luci-app-unblockmusic luci-app-arpbind \
