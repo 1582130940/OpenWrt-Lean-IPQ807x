@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
+
 /dts-v1/;
 /* Copyright (c) 2017, 2020-2021, The Linux Foundation. All rights reserved.
  */
@@ -42,7 +43,6 @@
 	};
 
 	reserved-memory {
-		
 		/delete-node/ wifi_dump@51100000;
 		/delete-node/ wigig_dump@51300000;
 		qcn9000_pcie0: qcn9000_pcie0@51100000 {
@@ -55,9 +55,7 @@
 			no-map;
 			reg = <0x0 0x54600000 0x0 0x00900000>;
 		};
-
 	};
-
 
 	keys {
 		compatible = "gpio-keys";
@@ -75,10 +73,12 @@
 
 	leds {
 		compatible = "gpio-leds";
+
 		led_system_green: system-green {
 			label = "green:system";
 			gpios = <&tlmm 31 GPIO_ACTIVE_LOW>;
 		};
+
 		led_system_red: system-red {
 			label = "red:system";
 			gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
@@ -94,13 +94,11 @@
 			gpios = <&tlmm 30 GPIO_ACTIVE_HIGH>;
 		};
 	};
-
 };
 
 &sdhc_1 {
 	status = "okay";
 };
-
 
 &qpic_nand {
 	pinctrl-0 = <&qpic_pins>;
@@ -191,7 +189,6 @@
 	};
 };
 
-
 &mdio{
 	status = "okay";
 
@@ -273,6 +270,7 @@
 			drive-strength = <8>;
 			bias-pull-up;
 		};
+
 		mux_1 {
 			pins = "gpio69";
 			function = "mdio";
@@ -434,7 +432,6 @@
 			// };
 		};
 	};
-
 };
 
 &qmp_pcie_phy1 {
@@ -449,6 +446,7 @@
 
 &ess_switch {
 	status = "okay";
+
 	pinctrl-0 = <&uniphy_pins>;
 	pinctrl-names = "default";
 	switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
@@ -459,6 +457,7 @@
 	switch_mac_mode2 = <0x0d>; /* mac mode for uniphy instance2*/
 	bm_tick_mode = <0>; /* bm tick mode */
 	tm_tick_mode = <0>; /* tm tick mode */
+
 	qcom,port_phyinfo {
 		port@0 {
 			port_id = <1>;
@@ -489,8 +488,8 @@
 			ethernet-phy-ieee802.3-c45;
 		};
 	};
-	port_scheduler_resource {
 
+	port_scheduler_resource {
 		port@0 {
 			port_id = < 0x00 >;
 			ucast_queue = < 0x00 0x8f >;
@@ -501,7 +500,6 @@
 			l1cdrr = < 0x00 0x07 >;
 			l1edrr = < 0x00 0x07 >;
 		};
-
 		port@1 {
 			port_id = < 0x01 >;
 			ucast_queue = < 0x90 0x9f >;
@@ -512,7 +510,6 @@
 			l1cdrr = < 0x08 0x0b >;
 			l1edrr = < 0x08 0x0b >;
 		};
-
 		port@2 {
 			port_id = < 0x02 >;
 			ucast_queue = < 0xa0 0xaf >;
@@ -523,7 +520,6 @@
 			l1cdrr = < 0x0c 0x0f >;
 			l1edrr = < 0x0c 0x0f >;
 		};
-
 		port@3 {
 			port_id = < 0x03 >;
 			ucast_queue = < 0xb0 0xbf >;
@@ -534,7 +530,6 @@
 			l1cdrr = < 0x10 0x13 >;
 			l1edrr = < 0x10 0x13 >;
 		};
-
 		port@4 {
 			port_id = < 0x04 >;
 			ucast_queue = < 0xc0 0xcf >;
@@ -545,7 +540,6 @@
 			l1cdrr = < 0x14 0x17 >;
 			l1edrr = < 0x14 0x17 >;
 		};
-
 		port@5 {
 			port_id = < 0x05 >;
 			ucast_queue = < 0xd0 0xdf >;
@@ -556,7 +550,6 @@
 			l1cdrr = < 0x18 0x1b >;
 			l1edrr = < 0x18 0x1b >;
 		};
-
 		port@6 {
 			port_id = < 0x06 >;
 			ucast_queue = < 0xe0 0xef >;
@@ -567,7 +560,6 @@
 			l1cdrr = < 0x1c 0x1f >;
 			l1edrr = < 0x1c 0x1f >;
 		};
-
 		port@7 {
 			port_id = < 0x07 >;
 			ucast_queue = < 0xf0 0xff >;
@@ -579,40 +571,31 @@
 			l1edrr = < 0x20 0x23 >;
 		};
 	};
-
 	port_scheduler_config {
-
 		port@0 {
 			port_id = < 0x00 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x00 0x01 >;
 					cfg = < 0x00 0x00 0x00 0x00 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0x00 0x04 0x08 >;
 					mcast_queue = < 0x100 0x104 >;
 					cfg = < 0x00 0x00 0x00 0x00 0x00 >;
 				};
-
 				group@1 {
 					ucast_queue = < 0x01 0x05 0x09 >;
 					mcast_queue = < 0x101 0x105 >;
 					cfg = < 0x00 0x01 0x01 0x01 0x01 >;
 				};
-
 				group@2 {
 					ucast_queue = < 0x02 0x06 0x0a >;
 					mcast_queue = < 0x102 0x106 >;
 					cfg = < 0x00 0x02 0x02 0x02 0x02 >;
 				};
-
 				group@3 {
 					ucast_queue = < 0x03 0x07 0x0b >;
 					mcast_queue = < 0x103 0x107 >;
@@ -620,25 +603,19 @@
 				};
 			};
 		};
-
 		port@1 {
 			port_id = < 0x01 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x24 >;
 					cfg = < 0x00 0x08 0x00 0x08 >;
 				};
-
 				group@1 {
 					sp = < 0x25 >;
 					cfg = < 0x01 0x09 0x01 0x09 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0x90 >;
 					ucast_loop_pri = < 0x10 >;
@@ -648,25 +625,19 @@
 				};
 			};
 		};
-
 		port@2 {
 			port_id = < 0x02 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x28 >;
 					cfg = < 0x00 0x0c 0x00 0x0c >;
 				};
-
 				group@1 {
 					sp = < 0x29 >;
 					cfg = < 0x01 0x0d 0x01 0x0d >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xa0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -676,25 +647,19 @@
 				};
 			};
 		};
-
 		port@3 {
 			port_id = < 0x03 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x2c >;
 					cfg = < 0x00 0x10 0x00 0x10 >;
 				};
-
 				group@1 {
 					sp = < 0x2d >;
 					cfg = < 0x01 0x11 0x01 0x11 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xb0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -704,25 +669,19 @@
 				};
 			};
 		};
-
 		port@4 {
 			port_id = < 0x04 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x30 >;
 					cfg = < 0x00 0x14 0x00 0x14 >;
 				};
-
 				group@1 {
 					sp = < 0x31 >;
 					cfg = < 0x01 0x15 0x01 0x15 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xc0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -732,25 +691,19 @@
 				};
 			};
 		};
-
 		port@5 {
 			port_id = < 0x05 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x34 >;
 					cfg = < 0x00 0x18 0x00 0x18 >;
 				};
-
 				group@1 {
 					sp = < 0x35 >;
 					cfg = < 0x01 0x19 0x01 0x19 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xd0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -760,25 +713,19 @@
 				};
 			};
 		};
-
 		port@6 {
 			port_id = < 0x06 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x38 >;
 					cfg = < 0x00 0x1c 0x00 0x1c >;
 				};
-
 				group@1 {
 					sp = < 0x39 >;
 					cfg = < 0x01 0x1d 0x01 0x1d >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xe0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -788,25 +735,19 @@
 				};
 			};
 		};
-
 		port@7 {
 			port_id = < 0x07 >;
-
 			l1scheduler {
-
 				group@0 {
 					sp = < 0x3c >;
 					cfg = < 0x00 0x20 0x00 0x20 >;
 				};
-
 				group@1 {
 					sp = < 0x3d >;
 					cfg = < 0x01 0x21 0x01 0x21 >;
 				};
 			};
-
 			l0scheduler {
-
 				group@0 {
 					ucast_queue = < 0xf0 >;
 					ucast_loop_pri = < 0x10 >;
@@ -820,7 +761,6 @@
 
 
 &soc {
-
 		phy@86000 {
 			status = "okay";
 		};
@@ -846,7 +786,6 @@
 		// qcom,test@0 {
 		// 	status = "okay";
 		// };
-
 
 		dp1: dp1 {
 			device_type = "network";
@@ -932,7 +871,6 @@
 		// };
 
 		wifi1: wifi1@f00000 {
-
 			compatible  = "qcom,cnss-qcn9000";
 			qcom,wlan-ramdump-dynamic = <0x400000>;
 			mhi,max-channels = <30>;
@@ -940,11 +878,10 @@
 			qrtr_node_id = <0x20>;
 			qca,auto-restart;
 
-			pcie0_mhi: pcie0_mhi {
+		pcie0_mhi: pcie0_mhi {
 				status = "ok";
-			};
-
 		};
+	};
 };
 
 &wifi {
