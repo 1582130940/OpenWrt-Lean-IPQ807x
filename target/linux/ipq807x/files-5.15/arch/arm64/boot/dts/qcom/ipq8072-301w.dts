@@ -159,7 +159,6 @@
 };
 
 &tlmm {
-
 	mdio_pins: mdio-pins {
 		mdc {
 			pins = "gpio68";
@@ -294,7 +293,7 @@
 			drive-strength = <8>;
 			bias-pull-down;
 		};
-    };
+	};
 };
 
 &blsp1_uart5 {
@@ -394,7 +393,6 @@
 	ethernet-phy@19 {
 		reg = <19>;
 	};
-
 };
 
 &sdhc_1 {

@@ -25,7 +25,7 @@ endef
 # <https://wireless.wiki.kernel.org/en/users/drivers/ath10k/boardfiles>
 
 ALLWIFIBOARDS:= \
-  edgecore-eap102 \
+	edgecore-eap102 \
 	gl-ax1800 \
 	gl-axt1800 \
 	qihoo_v6

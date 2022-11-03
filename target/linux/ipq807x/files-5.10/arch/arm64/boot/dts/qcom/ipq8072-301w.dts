@@ -159,7 +159,6 @@
 };
 
 &tlmm {
-
 	mdio_pins: mdio-pins {
 		mdc {
 			pins = "gpio68";
@@ -294,7 +293,7 @@
 			drive-strength = <8>;
 			bias-pull-down;
 		};
-    };
+	};
 };
 
 &blsp1_uart5 {
@@ -394,22 +393,21 @@
 	ethernet-phy@19 {
 		reg = <19>;
 	};
-
 };
 
 &sdhc_1 {
-		/* According to the stock dts from the QNAP gpl drop
-		 * the emmc has a problem with the hs400 > hs200 speed switch.
-		 * But at the momment it doesn't seems possible to run that card in hs200 mode,
-		 * it doesn't get recognized without the hs400 mode.
-		 * Unfortunately it's not stable in hs400 mode so reduce the speed to mmc highspeed.
-		*/
-		no-1-8-v;
-		cap-sd-highspeed;
-		cap-mmc-highspeed;
-		max-frequency   = <5000000>;
-		vqmmc-supply = <&ldo11>;
-		status = "okay";
+	/* According to the stock dts from the QNAP gpl drop
+	 * the emmc has a problem with the hs400 > hs200 speed switch.
+	 * But at the momment it doesn't seems possible to run that card in hs200 mode,
+	 * it doesn't get recognized without the hs400 mode.
+	 * Unfortunately it's not stable in hs400 mode so reduce the speed to mmc highspeed.
+	*/
+	no-1-8-v;
+	cap-sd-highspeed;
+	cap-mmc-highspeed;
+	max-frequency   = <5000000>;
+	vqmmc-supply = <&ldo11>;
+	status = "okay";
 };
 
 &ess_switch {

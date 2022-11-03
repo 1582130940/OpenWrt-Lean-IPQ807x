@@ -78,7 +78,7 @@
 			gpios = <&tlmm 55 GPIO_ACTIVE_HIGH>;
 		};
 	};
-	
+
 	spi@78b5000 {
 		status = "ok";
 		pinctrl-0 = <&spi_0_pins>;
