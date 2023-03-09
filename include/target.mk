@@ -28,7 +28,7 @@ DEFAULT_PACKAGES:=\
 	urngd
 
 ifneq ($(CONFIG_SELINUX),)
-DEFAULT_PACKAGES+=busybox-selinux procd-selinux
+DEFAULT_PACKAGES+=busybox procd
 else
 DEFAULT_PACKAGES+=busybox procd
 endif

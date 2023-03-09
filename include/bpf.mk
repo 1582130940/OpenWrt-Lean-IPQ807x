@@ -74,7 +74,7 @@ endif
 endif
 
 define CompileBPF
-	$(CLANG) -g -target $(BPF_ARCH)-linux-gnu $(BPF_CFLAGS) $(2) \
+	$(CLANG) -target $(BPF_ARCH)-linux-gnu $(BPF_CFLAGS) $(2) \
 		-c $(1) -o $(patsubst %.c,%.bc,$(1))
 	$(LLVM_OPT) -O2 -mtriple=$(BPF_TARGET) < $(patsubst %.c,%.bc,$(1)) > $(patsubst %.c,%.opt,$(1))
 	$(LLVM_DIS) < $(patsubst %.c,%.opt,$(1)) > $(patsubst %.c,%.S,$(1))
@@ -82,4 +82,3 @@ define CompileBPF
 	$(CP) $(patsubst %.c,%.o,$(1)) $(patsubst %.c,%.debug.o,$(1))
 	$(LLVM_STRIP) --strip-debug $(patsubst %.c,%.o,$(1))
 endef
-
